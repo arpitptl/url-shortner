@@ -32,7 +32,6 @@ app.post('/shorten', async (req, res) => {
     }
 
     const urlCode = shortid.generate()
-    console.log("SHORT CODE: ", urlCode)
 
     if (validUrl.isUri(longUrl)) {
         try {
@@ -66,6 +65,27 @@ app.post('/shorten', async (req, res) => {
     }
 })
 
+
+app.get('/:code', async (req, res) => {
+    const _code = req.params.code
+
+    try {
+        const url = await Url.findOne({
+            urlCode: _code
+        })
+
+        if (url) {
+            return res.redirect(url.longUrl)
+        }
+
+        return res.status(404).json('No URL found')
+
+    } catch (e) {
+        console.log(e)
+        return res.status(500).send()
+    }
+})
+
 app.listen(port, () => {
-    console.log("Server is up and running on port" + port)
+    console.log("Server is up and running on port " + port)
 })
