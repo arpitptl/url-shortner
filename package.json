@@ -1,0 +1,27 @@
+{
+  "name": "url-shortner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arpitptl/url-shortner.git"
+  },
+  "author": "Arpit Patel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arpitptl/url-shortner/issues"
+  },
+  "homepage": "https://github.com/arpitptl/url-shortner#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongoose": "^6.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
