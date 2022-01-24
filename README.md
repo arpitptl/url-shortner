@@ -58,7 +58,3 @@ $ npm install
 ```
 $ npm run dev
 ```
-
-## Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
