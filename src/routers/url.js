@@ -42,6 +42,7 @@ router.post('/shorten', async (req, res) => {
             })
 
             await url.save()
+            console.log("URL: ", url)
             return res.json(url)
 
         } catch (e) {
@@ -49,7 +50,7 @@ router.post('/shorten', async (req, res) => {
             return res.status(500).send()
         }
     } else {
-        res.status(401).json('Invalid long url provided')
+        res.status(401).json('Invalid long URL provided')
     }
 })
 
